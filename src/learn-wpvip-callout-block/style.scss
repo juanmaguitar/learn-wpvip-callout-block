@@ -1,0 +1,105 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-learn-wpvip-callout {
+	--wp--custom--vip-learn-callout--color--background: var(
+		--wp--custom-support-background-info,
+		rgba(205, 230, 235, 1)
+	);
+
+	--wp--style--global--content-size: 680px;
+
+	&.is-tip-callout {
+		--wp--custom--vip-learn-callout--color--background: var(
+			--wp--custom-support-background-success,
+			rgba(198, 234, 208, 1)
+		);
+	}
+
+	&.is-success-callout {
+		--wp--custom--vip-learn-callout--color--background: var(
+			--wp--custom-support-background-success,
+			rgba(198, 234, 208, 1)
+		);
+	}
+
+	&.is-info-callout {
+		--wp--custom--vip-learn-callout--color--background: var(
+			--wp--custom-support-background-info,
+			rgba(205, 230, 235, 1)
+		);
+	}
+
+	&.is-alert-callout {
+		--wp--custom--vip-learn-callout--color--background: var(
+			--wp--custom-support-background-error,
+			rgba(255, 213, 206, 1)
+		);
+	}
+
+	&.is-warning-callout {
+		--wp--custom--vip-learn-callout--color--background: var(
+			--wp--custom-support-background-warning,
+			rgba(255, 216, 165, 1)
+		);
+	}
+
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 0.5em;
+	padding: 1.25em;
+	margin-bottom: 1.25em;
+	background-color: var(--wp--custom--vip-learn-callout--color--background);
+	border-radius: 2px;
+	// font-size: var(--wp--preset--font-size--small);font-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-sizefont-size
+
+	& > * {
+		align-self: start;
+	}
+
+	&.alignleft,
+	&.alignright {
+		max-width: calc(var(--wp--style--global--content-size, 680px) * 0.66);
+	}
+}
+
+.wp-block-learn-wpvip-callout__icon {
+	display: flex;
+	align-self: flex-start;
+
+	/* Default line height for the content, to optically align icon + first line of content. */
+	height: 1.875em;
+	width: 24px;
+
+	background-image: url(./icon/library/tip.svg);
+	background-repeat: no-repeat;
+	background-position: top;
+	background-size: 24px 24px;
+	margin-top: 1px;
+}
+
+.wp-block-learn-wpvip-callout__content {
+	& > *:last-child {
+		padding-bottom: 0;
+	}
+}
+
+.is-success-callout .wp-block-learn-wpvip-callout__icon {
+	background-image: url(./icon/library/success.svg);
+}
+
+.is-info-callout .wp-block-learn-wpvip-callout__icon {
+	background-image: url(./icon/library/info.svg);
+}
+
+.is-alert-callout .wp-block-learn-wpvip-callout__icon {
+	background-image: url(./icon/library/alert.svg);
+}
+
+.is-warning-callout .wp-block-learn-wpvip-callout__icon {
+	background-image: url(./icon/library/warning.svg);
+}
