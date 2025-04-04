@@ -73,10 +73,12 @@ function getOptionLabel(type) {
   }) => type === value);
   return currentType.label || "";
 }
-function Edit({
-  attributes,
-  setAttributes
-}) {
+function Edit(props) {
+  //console.log(props);
+  const {
+    attributes,
+    setAttributes
+  } = props;
   const {
     content,
     type

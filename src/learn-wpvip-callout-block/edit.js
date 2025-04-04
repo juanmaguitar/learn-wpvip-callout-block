@@ -33,7 +33,9 @@ function getOptionLabel(type) {
 	return currentType.label || "";
 }
 
-export function Edit({ attributes, setAttributes }) {
+export function Edit(props) {
+	//console.log(props);
+	const { attributes, setAttributes } = props;
 	const { content, type } = attributes;
 	const className = `is-${type}-callout`;
 
