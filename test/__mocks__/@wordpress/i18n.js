@@ -1,4 +1,7 @@
+const __Mock = (text) => text;
+const sprintfMock = (text, ...args) => text.replace("%s", args[0]);
+
 module.exports = {
-	__: (text) => text,
-	sprintf: (text, ...args) => text.replace("%s", args[0]),
+	__: __Mock,
+	sprintf: sprintfMock,
 };

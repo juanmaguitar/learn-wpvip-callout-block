@@ -1,35 +1,13 @@
-const mockUseBlockProps = (props) => {
-	const { className = "" } = props;
-	const baseClassName = `wp-block-learn-wpvip-callout ${className}`.trim();
+const useBlockPropsMock = jest.fn(({ className = "" }) => ({
+	className: `wp-block-learn-wpvip-callout ${className}`.trim(),
+}));
+useBlockPropsMock.save = jest.fn(useBlockPropsMock);
 
-	return {
-		className: baseClassName,
-	};
-};
-
-const mockUseBlockPropsSave = (props) => {
-	const { className = "" } = props;
-	const baseClassName = `wp-block-learn-wpvip-callout ${className}`.trim();
-
-	return {
-		className: baseClassName,
-	};
-};
-
-const useBlockProps = jest.fn(mockUseBlockProps);
-useBlockProps.save = jest.fn(mockUseBlockPropsSave);
-
-const BlockControls = ({ children }) => (
+const BlockControlsMock = ({ children }) => (
 	<div data-testid="block-controls">{children}</div>
 );
 
-const RichText = ({
-	value,
-	tagName: Tag = "div",
-	multiline,
-	className,
-	onChange,
-}) => {
+const RichTextMock = ({ value, tagName: Tag = "div", className, onChange }) => {
 	if (onChange) {
 		return (
 			<Tag
@@ -49,7 +27,7 @@ const RichText = ({
 	);
 };
 
-RichText.Content = ({ value, tagName: Tag = "div", className }) => (
+RichTextMock.Content = ({ value, tagName: Tag = "div", className }) => (
 	<Tag
 		data-testid="rich-text-content"
 		className={className}
@@ -57,4 +35,8 @@ RichText.Content = ({ value, tagName: Tag = "div", className }) => (
 	/>
 );
 
-export { useBlockProps, BlockControls, RichText };
+export {
+	useBlockPropsMock as useBlockProps,
+	BlockControlsMock as BlockControls,
+	RichTextMock as RichText,
+};
