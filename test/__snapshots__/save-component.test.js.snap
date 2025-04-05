@@ -1,33 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Callout Block Save Component matches snapshot with content 1`] = `
+exports[`Save Component matches snapshot with content 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
-    <p
-      class="a11y-speak-intro-text"
-      hidden="hidden"
-      id="a11y-speak-intro-text"
-      style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;"
-    >
-      Notifications
-    </p>
-    <div
-      aria-atomic="true"
-      aria-live="assertive"
-      aria-relevant="additions text"
-      class="a11y-speak-region"
-      id="a11y-speak-assertive"
-      style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;"
-    />
-    <div
-      aria-atomic="true"
-      aria-live="polite"
-      aria-relevant="additions text"
-      class="a11y-speak-region"
-      id="a11y-speak-polite"
-      style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;"
-    />
     <div>
       <div
         class="wp-block-learn-wpvip-callout is-tip-callout"
@@ -119,34 +95,10 @@ exports[`Callout Block Save Component matches snapshot with content 1`] = `
 }
 `;
 
-exports[`Callout Block Save Component matches snapshot with empty content 1`] = `
+exports[`Save Component matches snapshot with empty content 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
-    <p
-      class="a11y-speak-intro-text"
-      hidden="hidden"
-      id="a11y-speak-intro-text"
-      style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;"
-    >
-      Notifications
-    </p>
-    <div
-      aria-atomic="true"
-      aria-live="assertive"
-      aria-relevant="additions text"
-      class="a11y-speak-region"
-      id="a11y-speak-assertive"
-      style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;"
-    />
-    <div
-      aria-atomic="true"
-      aria-live="polite"
-      aria-relevant="additions text"
-      class="a11y-speak-region"
-      id="a11y-speak-polite"
-      style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;"
-    />
     <div>
       <div
         class="wp-block-learn-wpvip-callout is-tip-callout"
