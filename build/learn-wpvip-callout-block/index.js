@@ -133,7 +133,7 @@ function Edit(props) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (/* binding */ Icon)
 /* harmony export */ });
 /* harmony import */ var _library_alert_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./library/alert.svg */ "./src/learn-wpvip-callout-block/icon/library/alert.svg");
 /* harmony import */ var _library_info_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./library/info.svg */ "./src/learn-wpvip-callout-block/icon/library/info.svg");
@@ -149,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__({
+function Icon({
   type
 }) {
   switch (type) {

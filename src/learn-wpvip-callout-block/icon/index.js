@@ -6,7 +6,7 @@ import { ReactComponent as Info } from "./library/info.svg";
 import { ReactComponent as Tip } from "./library/tip.svg";
 import { ReactComponent as Warning } from "./library/warning.svg";
 
-export default function ({ type }) {
+export default function Icon({ type }) {
 	switch (type) {
 		case "alert":
 			return <Alert />;
