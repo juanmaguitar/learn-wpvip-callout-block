@@ -34,7 +34,6 @@ function getOptionLabel(type) {
 }
 
 export function Edit(props) {
-	//console.log(props);
 	const { attributes, setAttributes } = props;
 	const { content, type } = attributes;
 	const className = `is-${type}-callout`;
@@ -43,11 +42,8 @@ export function Edit(props) {
 		<>
 			<BlockControls group="block">
 				<ToolbarDropdownMenu
-					text={sprintf(
-						/* translators: %s is the notice type label. */
-						__("Type: %s", "learn-wpvip"),
-						getOptionLabel(type),
-					)}
+					/* translators: %s is the notice type label. */
+					text={sprintf(__("Type: %s", "learn-wpvip"), getOptionLabel(type))}
 					icon={false}
 					controls={typeOptions.map(({ label, value }) => ({
 						title: label,
@@ -57,6 +53,7 @@ export function Edit(props) {
 					}))}
 				/>
 			</BlockControls>
+
 			<div {...useBlockProps({ className })}>
 				<div className="wp-block-learn-wpvip-callout__icon" />
 				<RichText

@@ -16,15 +16,45 @@ const mockUseBlockPropsSave = (props) => {
 	};
 };
 
-export const useBlockProps = jest.fn(mockUseBlockProps);
+const useBlockProps = jest.fn(mockUseBlockProps);
 useBlockProps.save = jest.fn(mockUseBlockPropsSave);
 
-export const RichText = {
-	Content: ({ value }) => <div dangerouslySetInnerHTML={{ __html: value }} />,
+const BlockControls = ({ children }) => (
+	<div data-testid="block-controls">{children}</div>
+);
+
+const RichText = ({
+	value,
+	tagName: Tag = "div",
+	multiline,
+	className,
+	onChange,
+}) => {
+	if (onChange) {
+		return (
+			<Tag
+				data-testid="rich-text"
+				className={className}
+				onChange={(e) => onChange(e.target.innerHTML)}
+				dangerouslySetInnerHTML={{ __html: value }}
+			/>
+		);
+	}
+	return (
+		<Tag
+			data-testid="rich-text-content"
+			className={className}
+			dangerouslySetInnerHTML={{ __html: value }}
+		/>
+	);
 };
 
-export const BlockControls = ({ children }) => <div>{children}</div>;
-export const ToolbarGroup = ({ children }) => <div>{children}</div>;
-export const ToolbarButton = ({ children, ...props }) => (
-	<button {...props}>{children}</button>
+RichText.Content = ({ value, tagName: Tag = "div", className }) => (
+	<Tag
+		data-testid="rich-text-content"
+		className={className}
+		dangerouslySetInnerHTML={{ __html: value }}
+	/>
 );
+
+export { useBlockProps, BlockControls, RichText };

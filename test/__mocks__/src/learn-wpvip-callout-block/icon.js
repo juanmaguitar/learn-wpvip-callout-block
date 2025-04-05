@@ -1,4 +1,5 @@
 // This is an empty mock since we don't need specific implementation
-export default function Icon() {
-	return null;
-}
+module.exports = {
+	__esModule: true,
+	default: ({ type }) => <div data-testid={`icon-${type}`} />,
+};

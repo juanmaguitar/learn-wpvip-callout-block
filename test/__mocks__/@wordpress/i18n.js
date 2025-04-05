@@ -1,4 +1,4 @@
-export const __ = (text) => text;
-export const sprintf = (text, ...args) => {
-	return text.replace(/%s/g, () => args.shift());
+module.exports = {
+	__: (text) => text,
+	sprintf: (text, ...args) => text.replace("%s", args[0]),
 };

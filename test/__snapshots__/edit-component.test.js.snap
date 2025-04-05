@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Edit Component matches snapshot 1`] = `
+<div>
+  <div
+    data-testid="block-controls"
+  >
+    <div
+      data-testid="toolbar-dropdown"
+    >
+      <button
+        data-testid="control-Tip"
+      >
+        Tip
+      </button>
+      <button
+        data-testid="control-Success"
+      >
+        Success
+      </button>
+      <button
+        data-testid="control-Information"
+      >
+        Information
+      </button>
+      <button
+        data-testid="control-Alert"
+      >
+        Alert
+      </button>
+      <button
+        data-testid="control-Warning"
+      >
+        Warning
+      </button>
+    </div>
+  </div>
+  <div
+    class="wp-block-learn-wpvip-callout is-tip-callout"
+  >
+    <div
+      class="wp-block-learn-wpvip-callout__icon"
+    />
+    <div
+      class="wp-block-learn-wpvip-callout__content"
+      data-testid="rich-text"
+    >
+      <p>
+        Test content
+      </p>
+    </div>
+  </div>
+</div>
+`;

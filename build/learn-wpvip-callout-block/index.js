@@ -74,7 +74,6 @@ function getOptionLabel(type) {
   return currentType.label || "";
 }
 function Edit(props) {
-  //console.log(props);
   const {
     attributes,
     setAttributes
@@ -87,9 +86,9 @@ function Edit(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.BlockControls, {
       group: "block",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToolbarDropdownMenu, {
-        text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.sprintf)(/* translators: %s is the notice type label. */
-        (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Type: %s", "learn-wpvip"), getOptionLabel(type)),
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToolbarDropdownMenu
+      /* translators: %s is the notice type label. */, {
+        text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Type: %s", "learn-wpvip"), getOptionLabel(type)),
         icon: false,
         controls: typeOptions.map(({
           label,

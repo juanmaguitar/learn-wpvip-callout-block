@@ -1,26 +1,29 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import "@testing-library/jest-dom";
 import { Edit } from "../src/learn-wpvip-callout-block/edit";
 
-xdescribe("Edit Component", () => {
+const mockEditProps = {
+	attributes: {
+		type: "tip",
+		content: "<p>Test content</p>",
+	},
+	setAttributes: jest.fn(),
+	clientId: "test-id",
+	className: "wp-block-learn-wpvip-callout",
+};
+
+beforeEach(() => {
+	mockEditProps.setAttributes.mockClear();
+	jest.clearAllMocks();
+});
+
+describe("Edit Component", () => {
 	it("matches snapshot", () => {
-		const attributes = {
-			type: "tip",
-			content: "<p>Test content</p>",
-		};
-		const setAttributes = jest.fn();
-		expect(
-			render(
-				<Edit
-					{...{
-						attributes,
-						setAttributes,
-						clientId: "test-id",
-						className: "wp-block-learn-wpvip-callout",
-					}}
-				/>,
-			),
-		).toMatchSnapshot();
+		const { container: renderedEditComponent } = render(
+			<Edit {...mockEditProps} />,
+		);
+		expect(renderedEditComponent).toMatchSnapshot();
 	});
 
 	describe("Type Selection", () => {
@@ -34,7 +37,7 @@ xdescribe("Edit Component", () => {
 			const user = userEvent.setup();
 
 			// Render
-			const { getByTestId } = render(
+			render(
 				<Edit
 					{...{
 						attributes,
@@ -45,8 +48,13 @@ xdescribe("Edit Component", () => {
 				/>,
 			);
 
+			// Verify initial state
+			expect(screen.getByTestId("block-controls")).toBeInTheDocument();
+			expect(screen.getByTestId("toolbar-dropdown")).toBeInTheDocument();
+			expect(screen.getByTestId("rich-text")).toBeInTheDocument();
+
 			// Action
-			const alertButton = getByTestId("control-Alert");
+			const alertButton = screen.getByTestId("control-Alert");
 			await user.click(alertButton);
 
 			// Assertion

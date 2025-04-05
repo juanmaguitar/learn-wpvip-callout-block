@@ -24,7 +24,7 @@
 		"@wordpress/scripts": "^30.14.0"
 	},
 	"dependencies": {
-		"@testing-library/react": "^16.2.0",
+		"@testing-library/react": "^14.1.2",
 		"@wordpress/block-editor": "^14.16.0",
 		"@wordpress/blocks": "^14.10.0",
 		"@wordpress/components": "^29.7.0",
