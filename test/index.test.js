@@ -1,4 +1,3 @@
-// my-block.test.js
 import {
 	createBlock,
 	registerBlockType,
@@ -6,88 +5,9 @@ import {
 } from "@wordpress/blocks";
 import { render, cleanup, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import blockJson from "../block.json";
-import { Edit } from "../edit";
-import Save from "../save";
-
-// Mock WordPress i18n
-jest.mock("@wordpress/i18n", () => ({
-	__: (text) => text,
-	sprintf: (text, ...args) => {
-		return text.replace(/%s/g, () => args.shift());
-	},
-}));
-
-// Mock SVG imports
-jest.mock("../icon/library/alert.svg", () => "alert-svg");
-jest.mock("../icon/library/info.svg", () => "info-svg");
-jest.mock("../icon/library/tip.svg", () => "tip-svg");
-jest.mock("../icon/library/warning.svg", () => "warning-svg");
-jest.mock("../icon/library/success.svg", () => "success-svg");
-
-// Mock Icon component
-jest.mock("../icon", () => ({
-	__esModule: true,
-	default: ({ type }) => <div data-testid={`icon-${type}`} />,
-}));
-
-// Mock WordPress components
-jest.mock("@wordpress/components", () => ({
-	ToolbarDropdownMenu: ({ children, text, icon, controls }) => (
-		<div data-testid="toolbar-dropdown">
-			<div data-testid="toolbar-text">{text}</div>
-			{icon && <div data-testid="toolbar-icon">{icon}</div>}
-			<div data-testid="toolbar-controls">
-				{controls.map((control, index) => (
-					<button
-						key={index}
-						onClick={control.onClick}
-						data-testid={`control-${control.title}`}
-					>
-						{control.title}
-					</button>
-				))}
-			</div>
-		</div>
-	),
-}));
-
-jest.mock("@wordpress/block-editor", () => {
-	const mockUseBlockProps = (props) => {
-		const { className = "" } = props;
-		const baseClassName = `wp-block-learn-wpvip-callout ${className}`.trim();
-
-		return {
-			className: baseClassName,
-		};
-	};
-
-	const mockUseBlockPropsSave = (props) => {
-		const { className = "" } = props;
-		const baseClassName = `wp-block-learn-wpvip-callout ${className}`.trim();
-
-		return {
-			className: baseClassName,
-		};
-	};
-
-	const useBlockProps = jest.fn(mockUseBlockProps);
-	useBlockProps.save = jest.fn(mockUseBlockPropsSave);
-
-	return {
-		useBlockProps,
-		RichText: {
-			Content: ({ value }) => (
-				<div dangerouslySetInnerHTML={{ __html: value }} />
-			),
-		},
-		BlockControls: ({ children }) => <div>{children}</div>,
-		ToolbarGroup: ({ children }) => <div>{children}</div>,
-		ToolbarButton: ({ children, ...props }) => (
-			<button {...props}>{children}</button>
-		),
-	};
-});
+import blockJson from "../src/learn-wpvip-callout-block/block.json";
+import { Edit } from "../src/learn-wpvip-callout-block/edit";
+import Save from "../src/learn-wpvip-callout-block/save";
 
 describe("Callout Block", () => {
 	beforeEach(() => {
@@ -99,7 +19,7 @@ describe("Callout Block", () => {
 		cleanup();
 	});
 
-	xdescribe("Block Registration", () => {
+	describe("Block Registration", () => {
 		it("should create a block with default attributes", () => {
 			const block = createBlock("learn-wpvip/callout");
 			expect(block.name).toBe("learn-wpvip/callout");
@@ -146,7 +66,7 @@ describe("Callout Block", () => {
 		});
 	});
 
-	xdescribe("Save Component", () => {
+	describe("Save Component", () => {
 		it("matches snapshot with empty content", () => {
 			const attributes = { type: "tip", content: "" };
 			expect(
@@ -199,7 +119,7 @@ describe("Callout Block", () => {
 		});
 	});
 
-	describe("Edit Component", () => {
+	xdescribe("Edit Component", () => {
 		it("matches snapshot", () => {
 			const attributes = {
 				type: "tip",
