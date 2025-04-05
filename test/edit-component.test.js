@@ -29,24 +29,11 @@ describe("Edit Component", () => {
 	describe("Type Selection", () => {
 		it("updates type when changed", async () => {
 			// Setup
-			const attributes = {
-				type: "tip",
-				content: "<p>Test content</p>",
-			};
-			const setAttributes = jest.fn();
+			const { setAttributes } = mockEditProps;
 			const user = userEvent.setup();
 
 			// Render
-			render(
-				<Edit
-					{...{
-						attributes,
-						setAttributes,
-						clientId: "test-id",
-						className: "wp-block-learn-wpvip-callout",
-					}}
-				/>,
-			);
+			render(<Edit {...mockEditProps} />);
 
 			// Verify initial state
 			expect(screen.getByTestId("block-controls")).toBeInTheDocument();
