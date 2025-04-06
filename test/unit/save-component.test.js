@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import Save from "../src/learn-wpvip-callout-block/save";
+import Save from "../../src/learn-wpvip-callout-block/save";
 
 describe("Save Component", () => {
 	it("matches snapshot with empty content", () => {

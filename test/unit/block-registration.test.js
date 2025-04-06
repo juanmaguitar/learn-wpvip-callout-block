@@ -3,7 +3,7 @@ import {
 	registerBlockType,
 	unregisterBlockType,
 } from "@wordpress/blocks";
-import blockJson from "../src/learn-wpvip-callout-block/block.json";
+import blockJson from "../../src/learn-wpvip-callout-block/block.json";
 
 describe("Block Registration", () => {
 	beforeEach(() => {
