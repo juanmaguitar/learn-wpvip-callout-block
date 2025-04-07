@@ -12,6 +12,7 @@
 	"config": {
 		"WP_DEBUG": true,
 		"SCRIPT_DEBUG": true,
-		"WP_ENVIRONMENT_TYPE": "development"
+		"WP_ENVIRONMENT_TYPE": "development",
+		"WP_AUTO_LOGIN": true
 	}
 }

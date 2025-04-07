@@ -2,7 +2,7 @@
  * Shared test utilities for E2E tests
  */
 
-const { expect } = require("@wordpress/e2e-test-utils-playwright");
+const { expect, test } = require("@wordpress/e2e-test-utils-playwright");
 
 /**
  * Sets up a post with a callout block
@@ -16,10 +16,6 @@ async function setupPostWithCallout(
 	{ admin, editor, page },
 	content = "This is a test paragraph created by our E2E test!",
 ) {
-	// Login first
-	await admin.visitAdminPage("/");
-	await admin.login();
-
 	// Create new post
 	await admin.createNewPost();
 	await page

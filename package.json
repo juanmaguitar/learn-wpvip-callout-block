@@ -25,12 +25,12 @@
 		"test:playwright:headed": "wp-scripts test-playwright --headed"
 	},
 	"devDependencies": {
+		"@playwright/test": "^1.51.1",
 		"@testing-library/jest-dom": "^6.6.3",
 		"@testing-library/user-event": "^14.6.1",
-		"@wordpress/scripts": "^30.14.0",
-		"@playwright/test": "^1.51.1",
 		"@wordpress/e2e-test-utils-playwright": "^1.21.0",
-		"@wordpress/env": "^8.12.0"
+		"@wordpress/env": "^8.12.0",
+		"@wordpress/scripts": "^30.14.0"
 	},
 	"dependencies": {
 		"@testing-library/react": "^14.1.2",
