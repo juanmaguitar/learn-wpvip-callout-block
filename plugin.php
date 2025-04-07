@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Notice Block
+ * Plugin Name: WP VIP Callout Block
  * Description: Add a color-coded notice to your post.
  */
 
