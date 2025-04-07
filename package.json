@@ -25,18 +25,11 @@
 		"test:playwright:headed": "wp-scripts test-playwright --headed"
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.51.1",
-		"@testing-library/jest-dom": "^6.6.3",
-		"@testing-library/user-event": "^14.6.1",
-		"@wordpress/e2e-test-utils-playwright": "^1.21.0",
 		"@wordpress/env": "^8.12.0",
-		"@wordpress/scripts": "^30.14.0"
-	},
-	"dependencies": {
-		"@testing-library/react": "^14.1.2",
-		"@wordpress/block-editor": "^14.16.0",
+		"@wordpress/scripts": "^30.14.0",
 		"@wordpress/blocks": "^14.10.0",
-		"@wordpress/components": "^29.7.0",
-		"@wordpress/i18n": "^5.21.0"
+		"@testing-library/react": "^14.1.2",
+		"@testing-library/user-event": "^14.6.1",
+		"@testing-library/jest-dom": "^6.6.3"
 	}
 }
