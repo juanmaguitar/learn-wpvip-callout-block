@@ -31,3 +31,4 @@ node_modules/
 
 test/e2e/test-results/
 artifacts/
+test/unit/__snapshots__/
